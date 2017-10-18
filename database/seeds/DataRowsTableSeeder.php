@@ -570,6 +570,139 @@ class DataRowsTableSeeder extends Seeder
                 'order'        => 13,
             ])->save();
         }
+
+        $dataRow = $this->dataRow($feedbackDataType, 'id');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'hidden',
+                'display_name' => 'Id',
+                'required'     => 1,
+                'browse'       => 0,
+                'read'         => 0,
+                'edit'         => 0,
+                'add'          => 0,
+                'delete'       => 0,
+                'details'      => '',
+                'order'        => 1,
+            ])->save();
+        }
+
+        $dataRow = $this->dataRow($feedbackDataType, 'name');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'text',
+                'display_name' => 'Name',
+                'required'     => 1,
+                'browse'       => 1,
+                'read'         => 1,
+                'edit'         => 1,
+                'add'          => 1,
+                'delete'       => 1,
+                'details'      => json_encode([
+                    'display' => [
+                        'width' => 6,
+                    ],
+                ]),
+                'order'        => 2,
+            ])->save();
+        }
+
+        $dataRow = $this->dataRow($feedbackDataType, 'email');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'text',
+                'display_name' => 'Email',
+                'required'     => 1,
+                'browse'       => 1,
+                'read'         => 1,
+                'edit'         => 1,
+                'add'          => 1,
+                'delete'       => 1,
+                'details'      => json_encode([
+                    'display' => [
+                        'width' => 6,
+                    ],
+                    'validation' => [
+                        'rules' => 'required|email',
+                    ],
+                ]),
+                'order'        => 3,
+            ])->save();
+        }
+
+        $dataRow = $this->dataRow($feedbackDataType, 'message');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'text_area',
+                'display_name' => 'Message',
+                'required'     => 0,
+                'browse'       => 1,
+                'read'         => 1,
+                'edit'         => 1,
+                'add'          => 1,
+                'delete'       => 1,
+                'details'      => json_encode([
+                    'display' => [
+                        'width' => 12,
+                    ],
+                ]),
+                'order'        => 4,
+            ])->save();
+        }
+
+        $dataRow = $this->dataRow($feedbackDataType, 'is_read');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'checkbox',
+                'display_name' => 'Is Read',
+                'required'     => 1,
+                'browse'       => 1,
+                'read'         => 1,
+                'edit'         => 1,
+                'add'          => 1,
+                'delete'       => 1,
+                'details'      => json_encode([
+                    'on' => 'Read',
+                    'off' => 'Unread',
+                    'display' => [
+                        'width' => 6,
+                    ],
+                ]),
+                'order'        => 5,
+            ])->save();
+        }
+
+        $dataRow = $this->dataRow($feedbackDataType, 'created_at');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'timestamp',
+                'display_name' => 'Created At',
+                'required'     => 0,
+                'browse'       => 1,
+                'read'         => 1,
+                'edit'         => 0,
+                'add'          => 0,
+                'delete'       => 0,
+                'details'      => '',
+                'order'        => 6,
+            ])->save();
+        }
+
+        $dataRow = $this->dataRow($feedbackDataType, 'updated_at');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'timestamp',
+                'display_name' => 'Updated At',
+                'required'     => 0,
+                'browse'       => 0,
+                'read'         => 1,
+                'edit'         => 0,
+                'add'          => 0,
+                'delete'       => 0,
+                'details'      => '',
+                'order'        => 7,
+            ])->save();
+        }
     }
 
     /**
