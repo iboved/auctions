@@ -2,12 +2,12 @@
 
 namespace App;
 
+use App\Traits\SpatialTrait;
 use Illuminate\Database\Eloquent\Model;
-use TCG\Voyager\Traits\Spatial;
 
 class Auctioneer extends Model
 {
-    use Spatial;
+    use SpatialTrait;
 
     protected $spatial = ['coordinates'];
 
