@@ -10,35 +10,6 @@ class DataTypesTableSeeder extends Seeder
      */
     public function run()
     {
-        $dataType = $this->dataType('slug', 'posts');
-        if (!$dataType->exists) {
-            $dataType->fill([
-                'name'                  => 'posts',
-                'display_name_singular' => 'Post',
-                'display_name_plural'   => 'Posts',
-                'icon'                  => 'voyager-news',
-                'model_name'            => 'TCG\\Voyager\\Models\\Post',
-                'policy_name'           => 'TCG\\Voyager\\Policies\\PostPolicy',
-                'controller'            => '',
-                'generate_permissions'  => 1,
-                'description'           => '',
-            ])->save();
-        }
-
-        $dataType = $this->dataType('slug', 'pages');
-        if (!$dataType->exists) {
-            $dataType->fill([
-                'name'                  => 'pages',
-                'display_name_singular' => 'Page',
-                'display_name_plural'   => 'Pages',
-                'icon'                  => 'voyager-file-text',
-                'model_name'            => 'TCG\\Voyager\\Models\\Page',
-                'controller'            => '',
-                'generate_permissions'  => 1,
-                'description'           => '',
-            ])->save();
-        }
-
         $dataType = $this->dataType('slug', 'users');
         if (!$dataType->exists) {
             $dataType->fill([
@@ -48,20 +19,6 @@ class DataTypesTableSeeder extends Seeder
                 'icon'                  => 'voyager-person',
                 'model_name'            => 'TCG\\Voyager\\Models\\User',
                 'policy_name'           => 'TCG\\Voyager\\Policies\\UserPolicy',
-                'controller'            => '',
-                'generate_permissions'  => 1,
-                'description'           => '',
-            ])->save();
-        }
-
-        $dataType = $this->dataType('name', 'categories');
-        if (!$dataType->exists) {
-            $dataType->fill([
-                'slug'                  => 'categories',
-                'display_name_singular' => 'Category',
-                'display_name_plural'   => 'Categories',
-                'icon'                  => 'voyager-categories',
-                'model_name'            => 'TCG\\Voyager\\Models\\Category',
                 'controller'            => '',
                 'generate_permissions'  => 1,
                 'description'           => '',
@@ -90,6 +47,34 @@ class DataTypesTableSeeder extends Seeder
                 'display_name_plural'   => 'Roles',
                 'icon'                  => 'voyager-lock',
                 'model_name'            => 'TCG\\Voyager\\Models\\Role',
+                'controller'            => '',
+                'generate_permissions'  => 1,
+                'description'           => '',
+            ])->save();
+        }
+
+        $dataType = $this->dataType('slug', 'auctioneers');
+        if (!$dataType->exists) {
+            $dataType->fill([
+                'name'                  => 'auctioneers',
+                'display_name_singular' => 'Auctioneer',
+                'display_name_plural'   => 'Auctioneers',
+                'icon'                  => 'voyager-people',
+                'model_name'            => 'App\\Auctioneer',
+                'controller'            => '',
+                'generate_permissions'  => 1,
+                'description'           => '',
+            ])->save();
+        }
+
+        $dataType = $this->dataType('slug', 'feedback');
+        if (!$dataType->exists) {
+            $dataType->fill([
+                'name'                  => 'feedback',
+                'display_name_singular' => 'Feedback',
+                'display_name_plural'   => 'Feedback',
+                'icon'                  => 'voyager-chat',
+                'model_name'            => 'App\\Feedback',
                 'controller'            => '',
                 'generate_permissions'  => 1,
                 'description'           => '',
