@@ -320,6 +320,256 @@ class DataRowsTableSeeder extends Seeder
                 'order'        => 9,
             ])->save();
         }
+
+        $dataRow = $this->dataRow($auctioneerDataType, 'id');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'hidden',
+                'display_name' => 'Id',
+                'required'     => 1,
+                'browse'       => 0,
+                'read'         => 0,
+                'edit'         => 0,
+                'add'          => 0,
+                'delete'       => 0,
+                'details'      => '',
+                'order'        => 1,
+            ])->save();
+        }
+
+        $dataRow = $this->dataRow($auctioneerDataType, 'name');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'text',
+                'display_name' => 'Name',
+                'required'     => 1,
+                'browse'       => 1,
+                'read'         => 1,
+                'edit'         => 1,
+                'add'          => 1,
+                'delete'       => 1,
+                'details'      => json_encode([
+                    'display' => [
+                        'width' => 6,
+                    ],
+                ]),
+                'order'        => 2,
+            ])->save();
+        }
+
+        $dataRow = $this->dataRow($auctioneerDataType, 'slug');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'text',
+                'display_name' => 'Slug',
+                'required'     => 1,
+                'browse'       => 1,
+                'read'         => 1,
+                'edit'         => 1,
+                'add'          => 1,
+                'delete'       => 1,
+                'details'      => json_encode([
+                    'slugify' => [
+                        'origin' => 'name',
+                    ],
+                    'display' => [
+                        'width' => 6,
+                    ],
+                ]),
+                'order'        => 3,
+            ])->save();
+        }
+
+        $dataRow = $this->dataRow($auctioneerDataType, 'type');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'select_dropdown',
+                'display_name' => 'Type',
+                'required'     => 1,
+                'browse'       => 1,
+                'read'         => 1,
+                'edit'         => 1,
+                'add'          => 1,
+                'delete'       => 1,
+                'details'      => json_encode([
+                    'default' => '1',
+                    'options' => [
+                        '1' => 'Auctioneers',
+                        '2' => 'Auctioneers Galleries',
+                    ],
+                    'display' => [
+                        'width' => 6,
+                    ],
+                ]),
+                'order'        => 4,
+            ])->save();
+        }
+
+        $dataRow = $this->dataRow($auctioneerDataType, 'address');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'text_area',
+                'display_name' => 'Address',
+                'required'     => 1,
+                'browse'       => 1,
+                'read'         => 1,
+                'edit'         => 1,
+                'add'          => 1,
+                'delete'       => 1,
+                'details'      => json_encode([
+                    'display' => [
+                        'width' => 6,
+                    ],
+                ]),
+                'order'        => 5,
+            ])->save();
+        }
+
+        $dataRow = $this->dataRow($auctioneerDataType, 'phone');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'text',
+                'display_name' => 'Phone',
+                'required'     => 1,
+                'browse'       => 1,
+                'read'         => 1,
+                'edit'         => 1,
+                'add'          => 1,
+                'delete'       => 1,
+                'details'      => json_encode([
+                    'display' => [
+                        'width' => 6,
+                    ],
+                ]),
+                'order'        => 6,
+            ])->save();
+        }
+
+        $dataRow = $this->dataRow($auctioneerDataType, 'fax');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'text',
+                'display_name' => 'Fax',
+                'required'     => 0,
+                'browse'       => 1,
+                'read'         => 1,
+                'edit'         => 1,
+                'add'          => 1,
+                'delete'       => 1,
+                'details'      => json_encode([
+                    'display' => [
+                        'width' => 6,
+                    ],
+                ]),
+                'order'        => 7,
+            ])->save();
+        }
+
+        $dataRow = $this->dataRow($auctioneerDataType, 'email');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'text',
+                'display_name' => 'Email',
+                'required'     => 0,
+                'browse'       => 1,
+                'read'         => 1,
+                'edit'         => 1,
+                'add'          => 1,
+                'delete'       => 1,
+                'details'      => json_encode([
+                    'display' => [
+                        'width' => 6,
+                    ],
+                ]),
+                'order'        => 8,
+            ])->save();
+        }
+
+        $dataRow = $this->dataRow($auctioneerDataType, 'site_url');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'text',
+                'display_name' => 'Site Url',
+                'required'     => 0,
+                'browse'       => 0,
+                'read'         => 1,
+                'edit'         => 1,
+                'add'          => 1,
+                'delete'       => 1,
+                'details'      => json_encode([
+                    'display' => [
+                        'width' => 6,
+                    ],
+                ]),
+                'order'        => 9,
+            ])->save();
+        }
+
+        $dataRow = $this->dataRow($auctioneerDataType, 'coordinates');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'coordinates',
+                'display_name' => 'Coordinates',
+                'required'     => 1,
+                'browse'       => 0,
+                'read'         => 1,
+                'edit'         => 1,
+                'add'          => 1,
+                'delete'       => 1,
+                'order'        => 10,
+            ])->save();
+        }
+
+        $dataRow = $this->dataRow($auctioneerDataType, 'is_enabled');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'checkbox',
+                'display_name' => 'Is Enabled',
+                'required'     => 1,
+                'browse'       => 1,
+                'read'         => 1,
+                'edit'         => 1,
+                'add'          => 1,
+                'delete'       => 1,
+                'details'      => json_encode([
+                    'on' => 'Enabled',
+                    'off' => 'Disabled',
+                ]),
+                'order'        => 11,
+            ])->save();
+        }
+
+        $dataRow = $this->dataRow($auctioneerDataType, 'created_at');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'timestamp',
+                'display_name' => 'Created At',
+                'required'     => 0,
+                'browse'       => 1,
+                'read'         => 1,
+                'edit'         => 0,
+                'add'          => 0,
+                'delete'       => 0,
+                'details'      => '',
+                'order'        => 12,
+            ])->save();
+        }
+
+        $dataRow = $this->dataRow($auctioneerDataType, 'updated_at');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'timestamp',
+                'display_name' => 'Updated At',
+                'required'     => 0,
+                'browse'       => 0,
+                'read'         => 1,
+                'edit'         => 0,
+                'add'          => 0,
+                'delete'       => 0,
+                'details'      => '',
+                'order'        => 13,
+            ])->save();
+        }
     }
 
     /**
