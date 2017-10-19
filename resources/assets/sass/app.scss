@@ -8,8 +8,14 @@
 // Bootstrap
 @import "~bootstrap-sass/assets/stylesheets/bootstrap";
 
+html {
+  position: relative;
+  min-height: 100%;
+}
+
 body {
   padding-top: 70px;
+  margin-bottom: 60px;
 }
 
 .footer {
@@ -26,4 +32,8 @@ p {
   &:last-child{
     margin-bottom: 0;
   }
+}
+
+.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
+  background-color: transparent;
 }
