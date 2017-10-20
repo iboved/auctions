@@ -11,7 +11,7 @@ trait SpatialTrait
      *
      * @param string $column
      *
-     * @return string WKT
+     * @return string
      */
     public function getLocation($column)
     {
@@ -19,11 +19,7 @@ trait SpatialTrait
             ->where('id', $this->id)
             ->first();
 
-        if (isset($model)) {
-            return $model->$column;
-        }
-
-        return null;
+        return isset($model) ? $model->$column : '';
     }
 
     /**
