@@ -9,6 +9,9 @@ class Auctioneer extends Model
 {
     use SpatialTrait;
 
+    const AUCTIONEER = 1;
+    const AUCTIONEER_GALLERY = 2;
+
     protected $spatial = ['coordinates'];
 
     /**
