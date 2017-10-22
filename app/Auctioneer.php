@@ -10,7 +10,7 @@ class Auctioneer extends Model
     use SpatialTrait;
 
     const AUCTIONEER = 1;
-    const AUCTIONEER_GALLERY = 2;
+    const AUCTION_GALLERY = 2;
 
     protected $spatial = ['coordinates'];
 
@@ -20,14 +20,4 @@ class Auctioneer extends Model
      * @var array
      */
     protected $guarded = ['id'];
-
-    /**
-     * Get the route key for the model.
-     *
-     * @return string
-     */
-    public function getRouteKeyName()
-    {
-        return 'slug';
-    }
 }

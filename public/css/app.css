@@ -8386,5 +8386,6 @@ p:last-child {
 #map {
   width: 100%;
   height: 400px;
+  margin-bottom: 22px;
 }
 

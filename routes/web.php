@@ -13,7 +13,9 @@
 
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('auctioneers', 'AuctioneerController@index')->name('auctioneers.index');
-Route::get('auctioneers/{auctioneer}', 'AuctioneerController@show')->name('auctioneers.show');
+Route::get('auctioneers/{slug}', 'AuctioneerController@show')->name('auctioneers.show');
+Route::get('auction-galleries', 'AuctionGalleryController@index')->name('auction_galleries.index');
+Route::get('auction-galleries/{slug}', 'AuctionGalleryController@show')->name('auction_galleries.show');
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();

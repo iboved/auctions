@@ -5,22 +5,22 @@ namespace App\Http\Controllers;
 use App\Auctioneer;
 use Illuminate\Http\Request;
 
-class AuctioneerController extends Controller
+class AuctionGalleryController extends Controller
 {
     public function index()
     {
         $auctioneers = Auctioneer::where('is_enabled', true)
-            ->where('type', Auctioneer::AUCTIONEER)
+            ->where('type', Auctioneer::AUCTION_GALLERY)
             ->orderBy('name', 'asc')
             ->paginate(15);
 
-        return view('auctioneer.index', ['auctioneers' => $auctioneers]);
+        return view('auction-gallery.index', ['auctioneers' => $auctioneers]);
     }
 
     public function show($slug)
     {
         $auctioneer = Auctioneer::where('is_enabled', true)
-            ->where('type', Auctioneer::AUCTIONEER)
+            ->where('type', Auctioneer::AUCTION_GALLERY)
             ->where('slug', $slug)
             ->first();
 
@@ -33,7 +33,7 @@ class AuctioneerController extends Controller
         $mapLat = array_get($coordinates, '0.lat');
         $mapLng = array_get($coordinates, '0.lng');
 
-        return view('auctioneer.show', [
+        return view('auction-gallery.show', [
             'auctioneer' => $auctioneer,
             'map_lat' => $mapLat,
             'map_lng' => $mapLng,
