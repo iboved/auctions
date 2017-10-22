@@ -40,17 +40,17 @@
             $linkAttributes =  'class="dropdown-toggle" data-toggle="dropdown"';
             $caret = '<span class="caret"></span>';
 
-            if (url($item->link()) == url()->current()){
+            if (url($item->link()) == url()->current()) {
                 $listItemClass = 'dropdown active';
             } else {
                 $listItemClass = 'dropdown';
             }
-        } elseif (url($item->link()) == url()->current()){
+        } elseif (url($item->link()) == url()->current()) {
             $listItemClass = 'active';
         }
 
         // Set Icon
-        if (isset($options->icon) && $options->icon == true){
+        if (isset($options->icon) && $options->icon == true) {
             $icon = '<i class="' . $item->icon_class . '"></i>';
         }
 
