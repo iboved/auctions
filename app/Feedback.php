@@ -11,5 +11,5 @@ class Feedback extends Model
      *
      * @var array
      */
-    protected $guarded = ['id'];
+    protected $guarded = ['id', 'is_read'];
 }

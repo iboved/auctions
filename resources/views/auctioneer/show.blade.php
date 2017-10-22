@@ -6,7 +6,6 @@
     <div class="page-header">
         <h1>{{ $auctioneer->name }}</h1>
     </div>
-
     <div class="row">
         @if (!empty($auctioneer->address))
             <div class="col-sm-3">
