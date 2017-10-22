@@ -11,8 +11,9 @@
 |
 */
 
-Route::get('/', 'HomeController@index');
-
+Route::get('/', 'HomeController@index')->name('home');
+Route::get('auctioneers', 'AuctioneerController@index')->name('auctioneers.index');
+Route::get('auctioneers/{auctioneer}', 'AuctioneerController@show')->name('auctioneers.show');
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();

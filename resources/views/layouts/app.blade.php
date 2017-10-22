@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-        <title>{{ setting('site.title') }}</title>
+        <title>@yield('title')</title>
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
         <meta name="csrf-token" content="{{ csrf_token() }}">
     </head>
@@ -37,5 +37,6 @@
             </div>
         </footer>
         <script src="{{ asset('js/app.js') }}"></script>
+        @yield('scripts')
     </body>
 </html>

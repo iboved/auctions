@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title', 'Auctions in Jacksonville, FL | Auctioneers in Jacksonville, Florida & Surrounding Areas')
+
 @section('content')
     <div class="jumbotron">
         <h1>{{ setting('site.title') }}</h1>
