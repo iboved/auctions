@@ -28,6 +28,8 @@
         </nav>
 
         <div class="container">
+            @includeWhen(Route::currentRouteName() != 'home', 'partials.adsense')
+
             @yield('content')
         </div>
 

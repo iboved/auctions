@@ -7,6 +7,9 @@
         <h1>{{ setting('site.title') }}</h1>
         <p>{{ setting('site.intro') }}</p>
     </div>
+
+    @include('partials.adsense')
+
     <div class="row">
         <div class="col-sm-12">
             {!! setting('site.description') !!}
