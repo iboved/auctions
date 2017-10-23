@@ -56,9 +56,9 @@
     @endif
 @endsection
 
-@section('scripts')
-    @if (!empty($map_lat) && !empty ($map_lng))
+@if (!empty($map_lat) && !empty ($map_lng))
+    @push('scripts')
         <script src="{{ asset('js/map.js') }}"></script>
         <script async defer src="https://maps.googleapis.com/maps/api/js?key={{ env('GOOGLE_MAPS_KEY') }}&callback=initMap"></script>
-    @endif
-@endsection
+    @endpush
+@endif
