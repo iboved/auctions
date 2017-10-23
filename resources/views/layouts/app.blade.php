@@ -32,8 +32,8 @@
         </div>
 
         <footer class="footer">
-            <div class="container">
-                <p class="text-center text-muted">{{ setting('site.copyright') }}</p>
+            <div class="container text-center">
+                <span class="text-muted">{{ setting('site.copyright') }}</span>
             </div>
         </footer>
         <script src="{{ asset('js/app.js') }}"></script>
