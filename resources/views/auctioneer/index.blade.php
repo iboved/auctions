@@ -3,9 +3,9 @@
 @section('title', 'Auctioneers in Jacksonville, Florida')
 
 @section('content')
-    <div class="page-header">
-        <h1>Auctioneers & Auction Companies In Jacksonville, FL</h1>
-    </div>
+    @component('partials.page-header')
+        <h3>Auctioneers & Auction Companies In Jacksonville, FL</h3>
+    @endcomponent
     <div class="list-group">
         @forelse ($auctioneers as $auctioneer)
             <a href="{{ route('auctioneers.show', ['auctioneer' => $auctioneer->slug]) }}" class="list-group-item">{{ $auctioneer->name }}</a>
