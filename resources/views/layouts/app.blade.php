@@ -19,7 +19,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="{{ route('home') }}"><img src="{{ Voyager::image(setting('site.logo')) }}" class="logo"></a>
+                    <a class="navbar-brand" href="{{ route('home') }}"><img src="{{ Voyager::image(setting('site.logo')) }}" class="logo"><span class="site-name">{{ setting('site.title') }}</span></a>
                 </div>
                 <div id="navbar" class="navbar-collapse collapse">
                     {{ menu('site', 'partials.menu') }}

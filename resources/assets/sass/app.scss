@@ -38,5 +38,19 @@ body {
 }
 
 .logo {
-  height: 30px;
+  height: 22px;
+  margin-right: 6px;
+  float: left;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  body {
+    padding-top: 120px;
+  }
+}
+
+@media (min-width: 768px) {
+  .nav.navbar-nav {
+    float: right;
+  }
 }
