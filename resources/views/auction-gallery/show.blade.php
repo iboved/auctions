@@ -54,6 +54,7 @@
         <input type="hidden" id="map_lng" value="{{ $map_lng }}">
         <input type="hidden" id="marker_title" value="{{ $auctioneer->name }}">
     @endif
+    @include('partials.adsense')
 @endsection
 
 @if (!empty($map_lat) && !empty ($map_lng))
