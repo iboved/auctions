@@ -6,7 +6,7 @@ window.initMap = function() {
     var myLatLng = {lat: map_lat, lng: map_lng};
 
     var map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 11,
+        zoom: 15,
         center: myLatLng,
         gestureHandling: 'cooperative'
     });
