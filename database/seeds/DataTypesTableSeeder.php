@@ -66,20 +66,6 @@ class DataTypesTableSeeder extends Seeder
                 'description'           => '',
             ])->save();
         }
-
-        $dataType = $this->dataType('slug', 'feedback');
-        if (!$dataType->exists) {
-            $dataType->fill([
-                'name'                  => 'feedback',
-                'display_name_singular' => 'Feedback',
-                'display_name_plural'   => 'Feedback',
-                'icon'                  => 'voyager-chat',
-                'model_name'            => 'App\\Feedback',
-                'controller'            => '',
-                'generate_permissions'  => 1,
-                'description'           => '',
-            ])->save();
-        }
     }
 
     /**

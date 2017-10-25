@@ -33,7 +33,5 @@ class PermissionsTableSeeder extends Seeder
         Permission::generateFor('settings');
 
         Permission::generateFor('auctioneers');
-
-        Permission::generateFor('feedback');
     }
 }

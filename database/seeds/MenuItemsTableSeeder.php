@@ -98,22 +98,6 @@ class MenuItemsTableSeeder extends Seeder
                 ])->save();
             }
 
-            $menuItem = MenuItem::firstOrNew([
-                'menu_id'    => $menu->id,
-                'title'      => 'Feedback',
-                'url'        => '',
-                'route'      => 'voyager.feedback.index',
-            ]);
-            if (!$menuItem->exists) {
-                $menuItem->fill([
-                    'target'     => '_self',
-                    'icon_class' => 'voyager-chat',
-                    'color'      => null,
-                    'parent_id'  => null,
-                    'order'      => 6,
-                ])->save();
-            }
-
             $toolsMenuItem = MenuItem::firstOrNew([
                 'menu_id'    => $menu->id,
                 'title'      => 'Tools',

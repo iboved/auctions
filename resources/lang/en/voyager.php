@@ -329,9 +329,6 @@ return [
         'auctioneer'     => 'Auctioneer|Auctioneers',
         'auctioneer_link_text' => 'View all auctioneers',
         'auctioneer_text'      => 'You have :count :string in your database. Click on button below to view all auctioneers.',
-        'feedback'             => 'Feedback',
-        'feedback_link_text' => 'View all feedback',
-        'feedback_text'      => 'You have :count :string in your database. Click on button below to view all feedback.',
     ],
 
     'form' => [

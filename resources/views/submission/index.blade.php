@@ -1,10 +1,10 @@
 @extends('layouts.app')
 
-@section('title', 'Contact Us')
+@section('title', 'Submission')
 
 @section('content')
     <div class="page-header">
-        <h1>Contact Us</h1>
+        <h1>Submission</h1>
     </div>
     @if ($errors->any())
         <div class="alert alert-danger">
@@ -20,7 +20,7 @@
             {{ session('status') }}
         </div>
     @endif
-    <form action="{{ route('feedback.store') }}" method="post">
+    <form action="{{ route('submission.store') }}" method="post">
         {{ csrf_field() }}
         <div class="form-group col-sm-6">
             <label for="name">Name</label>
