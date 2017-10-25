@@ -3,9 +3,9 @@
 @section('title', $auctioneer->name)
 
 @section('content')
-    @component('partials.page-header')
-        <h3>{{ $auctioneer->name }}</h3>
-    @endcomponent
+    <div class="page-header">
+        <h1>{{ $auctioneer->name }}</h1>
+    </div>
     <div class="row">
         @if (!empty($auctioneer->address))
             <div class="col-sm-3">
@@ -54,7 +54,6 @@
         <input type="hidden" id="map_lng" value="{{ $map_lng }}">
         <input type="hidden" id="marker_title" value="{{ $auctioneer->name }}">
     @endif
-    @include('partials.adsense')
 @endsection
 
 @if (!empty($map_lat) && !empty ($map_lng))

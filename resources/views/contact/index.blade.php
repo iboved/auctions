@@ -3,9 +3,9 @@
 @section('title', 'Contact Us')
 
 @section('content')
-    @component('partials.page-header')
-        <h3>Contact Us</h3>
-    @endcomponent
+    <div class="page-header">
+        <h1>Contact Us</h1>
+    </div>
     @if ($errors->any())
         <div class="alert alert-danger">
             <ul>

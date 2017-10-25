@@ -3,9 +3,9 @@
 @section('title', 'Privacy Policy')
 
 @section('content')
-    @component('partials.page-header')
-        <h3>Privacy Policy</h3>
-    @endcomponent
+    <div class="page-header">
+        <h1>Privacy Policy</h1>
+    </div>
     <div class="row">
         <div class="col-sm-12">
             {!! setting('site.privacy_policy') !!}
