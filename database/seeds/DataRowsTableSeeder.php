@@ -404,6 +404,68 @@ class DataRowsTableSeeder extends Seeder
             ])->save();
         }
 
+        $dataRow = $this->dataRow($auctioneerDataType, 'city');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'text',
+                'display_name' => 'City',
+                'required'     => 1,
+                'browse'       => 1,
+                'read'         => 1,
+                'edit'         => 1,
+                'add'          => 1,
+                'delete'       => 1,
+                'details'      => json_encode([
+                    'display' => [
+                        'width' => 6,
+                    ],
+                ]),
+                'order'        => 5,
+            ])->save();
+        }
+
+        $dataRow = $this->dataRow($auctioneerDataType, 'state');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'text',
+                'display_name' => 'State',
+                'required'     => 0,
+                'browse'       => 0,
+                'read'         => 1,
+                'edit'         => 1,
+                'add'          => 1,
+                'delete'       => 1,
+                'details'      => json_encode([
+                    'default' => 'Florida',
+                    'display' => [
+                        'width' => 6,
+                    ],
+                ]),
+                'order'        => 6,
+            ])->save();
+        }
+
+        $dataRow = $this->dataRow($auctioneerDataType, 'zip_code');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'text',
+                'display_name' => 'Zip Code',
+                'required'     => 0,
+                'browse'       => 1,
+                'read'         => 1,
+                'edit'         => 1,
+                'add'          => 1,
+                'delete'       => 1,
+                'details'      => json_encode([
+                    'default' => 'Florida',
+                    'display' => [
+                        'width' => 6,
+                    ],
+                ]),
+                'order'        => 7,
+            ])->save();
+        }
+
         $dataRow = $this->dataRow($auctioneerDataType, 'address');
         if (!$dataRow->exists) {
             $dataRow->fill([
@@ -417,10 +479,10 @@ class DataRowsTableSeeder extends Seeder
                 'delete'       => 1,
                 'details'      => json_encode([
                     'display' => [
-                        'width' => 6,
+                        'width' => 12,
                     ],
                 ]),
-                'order'        => 5,
+                'order'        => 8,
             ])->save();
         }
 
@@ -440,7 +502,7 @@ class DataRowsTableSeeder extends Seeder
                         'width' => 6,
                     ],
                 ]),
-                'order'        => 6,
+                'order'        => 9,
             ])->save();
         }
 
@@ -460,7 +522,7 @@ class DataRowsTableSeeder extends Seeder
                         'width' => 6,
                     ],
                 ]),
-                'order'        => 7,
+                'order'        => 10,
             ])->save();
         }
 
@@ -480,7 +542,7 @@ class DataRowsTableSeeder extends Seeder
                         'width' => 6,
                     ],
                 ]),
-                'order'        => 8,
+                'order'        => 11,
             ])->save();
         }
 
@@ -497,10 +559,10 @@ class DataRowsTableSeeder extends Seeder
                 'delete'       => 1,
                 'details'      => json_encode([
                     'display' => [
-                        'width' => 6,
+                        'width' => 12,
                     ],
                 ]),
-                'order'        => 9,
+                'order'        => 12,
             ])->save();
         }
 
@@ -509,13 +571,13 @@ class DataRowsTableSeeder extends Seeder
             $dataRow->fill([
                 'type'         => 'coordinates',
                 'display_name' => 'Coordinates',
-                'required'     => 1,
+                'required'     => 0,
                 'browse'       => 0,
                 'read'         => 1,
                 'edit'         => 1,
                 'add'          => 1,
                 'delete'       => 1,
-                'order'        => 10,
+                'order'        => 13,
             ])->save();
         }
 
@@ -534,7 +596,7 @@ class DataRowsTableSeeder extends Seeder
                     'on' => 'Enabled',
                     'off' => 'Disabled',
                 ]),
-                'order'        => 11,
+                'order'        => 14,
             ])->save();
         }
 
@@ -550,7 +612,7 @@ class DataRowsTableSeeder extends Seeder
                 'add'          => 0,
                 'delete'       => 0,
                 'details'      => '',
-                'order'        => 12,
+                'order'        => 15,
             ])->save();
         }
 
@@ -566,7 +628,7 @@ class DataRowsTableSeeder extends Seeder
                 'add'          => 0,
                 'delete'       => 0,
                 'details'      => '',
-                'order'        => 13,
+                'order'        => 16,
             ])->save();
         }
     }

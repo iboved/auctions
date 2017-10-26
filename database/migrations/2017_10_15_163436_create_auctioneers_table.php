@@ -23,7 +23,7 @@ class CreateAuctioneersTable extends Migration
             $table->string('fax')->nullable();
             $table->string('email')->nullable();
             $table->string('site_url')->nullable();
-            $table->point('coordinates');
+            $table->point('coordinates')->nullable();
             $table->boolean('is_enabled')->default(false);
             $table->timestamps();
         });
