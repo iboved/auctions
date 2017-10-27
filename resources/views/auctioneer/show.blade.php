@@ -7,22 +7,19 @@
         <h1>{{ $auctioneer->name }}</h1>
     </div>
     <div class="row">
-        @if (!empty($auctioneer->address))
-            <div class="col-sm-3">
-                <address>
-                    <strong>Address</strong>
-                    <p>{!! nl2br($auctioneer->address) !!}</p>
-                </address>
-            </div>
-        @endif
-        @if (!empty($auctioneer->phone))
-            <div class="col-sm-3">
-                <address>
-                    <strong>Phone Number</strong>
-                    <p><a href="tel:{{ $auctioneer->phone }}">{{ $auctioneer->phone }}</a></p>
-                </address>
-            </div>
-        @endif
+        <div class="col-sm-3">
+            <address>
+                <strong>Address</strong><br>
+                {{ $auctioneer->street }}<br>
+                {{ $auctioneer->city }}, {{ $auctioneer->state }} {{ $auctioneer->zip_code }}
+            </address>
+        </div>
+        <div class="col-sm-3">
+            <address>
+                <strong>Phone Number</strong>
+                <p><a href="tel:{{ $auctioneer->phone }}">{{ $auctioneer->phone }}</a></p>
+            </address>
+        </div>
         @if (!empty($auctioneer->fax))
             <div class="col-sm-3">
                 <address>

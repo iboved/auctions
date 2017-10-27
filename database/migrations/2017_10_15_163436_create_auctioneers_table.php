@@ -18,7 +18,7 @@ class CreateAuctioneersTable extends Migration
             $table->string('name');
             $table->string('slug')->unique();
             $table->smallInteger('type');
-            $table->string('address');
+            $table->string('street');
             $table->string('phone');
             $table->string('fax')->nullable();
             $table->string('email')->nullable();

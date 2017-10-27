@@ -404,11 +404,11 @@ class DataRowsTableSeeder extends Seeder
             ])->save();
         }
 
-        $dataRow = $this->dataRow($auctioneerDataType, 'city');
+        $dataRow = $this->dataRow($auctioneerDataType, 'street');
         if (!$dataRow->exists) {
             $dataRow->fill([
                 'type'         => 'text',
-                'display_name' => 'City',
+                'display_name' => 'Street',
                 'required'     => 1,
                 'browse'       => 1,
                 'read'         => 1,
@@ -424,6 +424,26 @@ class DataRowsTableSeeder extends Seeder
             ])->save();
         }
 
+        $dataRow = $this->dataRow($auctioneerDataType, 'city');
+        if (!$dataRow->exists) {
+            $dataRow->fill([
+                'type'         => 'text',
+                'display_name' => 'City',
+                'required'     => 1,
+                'browse'       => 1,
+                'read'         => 1,
+                'edit'         => 1,
+                'add'          => 1,
+                'delete'       => 1,
+                'details'      => json_encode([
+                    'display' => [
+                        'width' => 4,
+                    ],
+                ]),
+                'order'        => 6,
+            ])->save();
+        }
+
         $dataRow = $this->dataRow($auctioneerDataType, 'state');
         if (!$dataRow->exists) {
             $dataRow->fill([
@@ -436,12 +456,12 @@ class DataRowsTableSeeder extends Seeder
                 'add'          => 1,
                 'delete'       => 1,
                 'details'      => json_encode([
-                    'default' => 'Florida',
+                    'default' => 'FL',
                     'display' => [
-                        'width' => 6,
+                        'width' => 4,
                     ],
                 ]),
-                'order'        => 6,
+                'order'        => 7,
             ])->save();
         }
 
@@ -457,29 +477,9 @@ class DataRowsTableSeeder extends Seeder
                 'add'          => 1,
                 'delete'       => 1,
                 'details'      => json_encode([
-                    'default' => 'Florida',
+                    'default' => 'FL',
                     'display' => [
-                        'width' => 6,
-                    ],
-                ]),
-                'order'        => 7,
-            ])->save();
-        }
-
-        $dataRow = $this->dataRow($auctioneerDataType, 'address');
-        if (!$dataRow->exists) {
-            $dataRow->fill([
-                'type'         => 'text_area',
-                'display_name' => 'Address',
-                'required'     => 1,
-                'browse'       => 1,
-                'read'         => 1,
-                'edit'         => 1,
-                'add'          => 1,
-                'delete'       => 1,
-                'details'      => json_encode([
-                    'display' => [
-                        'width' => 12,
+                        'width' => 4,
                     ],
                 ]),
                 'order'        => 8,
@@ -559,7 +559,7 @@ class DataRowsTableSeeder extends Seeder
                 'delete'       => 1,
                 'details'      => json_encode([
                     'display' => [
-                        'width' => 12,
+                        'width' => 6,
                     ],
                 ]),
                 'order'        => 12,
