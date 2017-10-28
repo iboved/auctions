@@ -11,7 +11,13 @@
             <address>
                 <strong>Address</strong><br>
                 {{ $auctioneer->street }}<br>
-                {{ $auctioneer->city }}, {{ $auctioneer->state }} {{ $auctioneer->zip_code }}
+                {{ $auctioneer->city }}{{ !empty($auctioneer->state) || !empty($auctioneer->zip_code) ? ',' : '' }}
+                @if (!empty($auctioneer->state))
+                    {{ $auctioneer->state }}
+                @endif
+                @if (!empty($auctioneer->zip_code))
+                    {{ $auctioneer->zip_code }}
+                @endif
             </address>
         </div>
         <div class="col-sm-3">
