@@ -16,6 +16,11 @@ class HomeController extends Controller
         return view('home.index');
     }
 
+    /**
+     * Show Privacy Policy page.
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function privacyPolicy()
     {
         return view('home.privacy-policy');

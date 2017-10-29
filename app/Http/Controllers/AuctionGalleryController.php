@@ -7,6 +7,11 @@ use Illuminate\Http\Request;
 
 class AuctionGalleryController extends Controller
 {
+    /**
+     * Show all auction galleries.
+     *
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function index()
     {
         $auctioneers = Auctioneer::where('is_enabled', true)
@@ -17,6 +22,12 @@ class AuctionGalleryController extends Controller
         return view('auction-gallery.index', ['auctioneers' => $auctioneers]);
     }
 
+    /**
+     * Show one auction gallery.
+     *
+     * @param $slug
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function show($slug)
     {
         $auctioneer = Auctioneer::where('is_enabled', true)
