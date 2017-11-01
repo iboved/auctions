@@ -2,13 +2,13 @@
 
 namespace App;
 
-use App\Traits\SpatialTrait;
 use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Model;
+use TCG\Voyager\Traits\Spatial;
 
 class Auctioneer extends Model
 {
-    use SpatialTrait, Sluggable;
+    use Spatial, Sluggable;
 
     const AUCTIONEER = 1;
     const AUCTION_GALLERY = 2;
