@@ -27,7 +27,7 @@ class Auctioneer extends Model
      *
      * @return array
      */
-    public function sluggable()
+    public function sluggable(): array
     {
         return [
             'slug' => [
@@ -41,7 +41,7 @@ class Auctioneer extends Model
      *
      * @return string
      */
-    public function getFormattedAddress()
+    public function getFormattedAddress(): string
     {
         $address[] = $this->street;
         $address[] = $this->city;

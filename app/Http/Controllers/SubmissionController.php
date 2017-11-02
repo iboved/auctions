@@ -57,10 +57,10 @@ class SubmissionController extends Controller
     /**
      * Return the geocoded address by Google Maps Geocoding API.
      *
-     * @param $address
+     * @param string $address
      * @return mixed
      */
-    public function geocodingAddress($address)
+    public function geocodingAddress(string $address)
     {
         $apiUrl = 'https://maps.googleapis.com/maps/api/geocode/json?address=' . urlencode($address) . '&key=' . env('GOOGLE_MAPS_KEY');
 

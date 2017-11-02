@@ -25,19 +25,17 @@ class AuctioneerController extends Controller
     /**
      * Show one auctioneer.
      *
-     * @param $slug
+     * @param string $slug
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function show($slug)
+    public function show(string $slug)
     {
         $auctioneer = Auctioneer::where('is_enabled', true)
             ->where('type', Auctioneer::AUCTIONEER)
             ->where('slug', $slug)
             ->first();
 
-        if (empty($auctioneer)) {
-            abort(404);
-        }
+        abort_if(empty($auctioneer), 404);
 
         $coordinates = $auctioneer->getCoordinates();
 
